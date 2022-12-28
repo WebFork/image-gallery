@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['cdn.webfork.in'],
+    domains: ['cdn.webfork.in', 'mmybuymgvqgloflcnich.supabase.co'],
   },
 }
