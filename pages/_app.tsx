@@ -3,7 +3,6 @@ import type { AppProps } from 'next/app';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Head from 'next/head';
-import Script from 'next/script';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -15,21 +14,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel='canonical' href='https://pics.navaneeth.live/' />
         <meta name="description" content="An advanced image sharing platform from Jiji." />
         <link href="/favicon.ico" rel="icon shortcut" type="image/x-icon"></link>
-        <Script strategy='afterInteractive' async src="https://www.googletagmanager.com/gtag/js?id=G-GXB4L7YK50" />
-        <Script
-          id='google-analytics'
-          strategy='afterInteractive'
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-GXB4L7YK50', {
-                page_path: window.location.pathname,
-              });
-            `
-          }}
-        />
       </Head>
       <Component {...pageProps} />
       <ToastContainer />
