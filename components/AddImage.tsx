@@ -9,21 +9,6 @@ interface FormData {
     comment: string;
     file: FileList;
     checked: boolean;
-}
-
-const convertBase64 = (file: Blob) => {
-    return new Promise((resolve, reject) => {
-        const fileReader = new FileReader();
-        fileReader.readAsDataURL(file);
-
-        fileReader.onload = () => {
-            resolve(fileReader.result);
-        };
-
-        fileReader.onerror = (error) => {
-            reject(error);
-        };
-    });
 };
 
 export const AddImage = ({ close }: { close: () => void }) => {
@@ -105,7 +90,7 @@ export const AddImage = ({ close }: { close: () => void }) => {
                                             {...register('checked')}
                                             className="h-4 w-4 text-blue-300 rounded"
                                         />
-                                        <label htmlFor="checkbox" className="ml-2 text-sm text-gray-600">I have read and agree to the <a href="#" className="text-blue-400">Privacy Policy</a> and <a href='#' className="text-blue-400">Terms of Service</a>.</label>
+                                        <label htmlFor="checkbox" className="ml-2 text-sm text-gray-600">I have read and agree to the <a href="/privacy" className="text-blue-400">Privacy Policy</a> and <a href='/terms' className="text-blue-400">Terms of Service</a>.</label>
                                     </div>
                                 </div>
                             </div>
